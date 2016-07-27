@@ -58,7 +58,7 @@ module Pandorabots
 
       def https
         uri = URI(BASE_URL)
-        https = Net::HTTP.new(uri.host, uri.port)
+        https ||= Net::HTTP.new(uri.host, uri.port)
         # https.use_ssl = true
         https
       end
