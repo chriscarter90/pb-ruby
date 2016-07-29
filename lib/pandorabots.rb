@@ -56,7 +56,7 @@ module Pandorabots
       end
 
       def https
-        @https ||= set_https
+        @@https ||= set_https
       end
 
       def set_https
