@@ -1,3 +1,6 @@
+# modifications
+I added some features that now allow the conversation with the chatbot to persist and that speed up the chatbot's response.
+
 # pb-ruby
 
 Pandorabots API module for Ruby. Please read the [documentation](http://developer.pandorabots.com/docs).
