@@ -54,6 +54,9 @@ module Pandorabots
         response_json
       end
 
+
+      private
+
       def https
         @https ||= set_https
       end
@@ -64,9 +67,7 @@ module Pandorabots
         vhttps.use_ssl = true
         vhttps
       end
-
-      private
-
+      
       def filename(file)
         File.basename(file, '.*')
       end
