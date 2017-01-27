@@ -1,23 +1,34 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'pandorabots/version'
+# -*- encoding: utf-8 -*-
+# stub: pandorabots_api 0.0.1 ruby lib
 
-Gem::Specification.new do |spec|
-  spec.name          = "pandorabots_api"
-  spec.version       = Pandorabots::VERSION
-  spec.authors       = ["Takuya Tsuchida"]
-  spec.email         = ["takuya.tsuchida@spontena.com"]
-  spec.summary       = %q{Pandorabots API module for Ruby.}
-  spec.description   = ""
-  spec.homepage      = "https://github.com/spontena/pb-ruby"
-  spec.license       = "MIT"
+Gem::Specification.new do |s|
+  s.name = "pandorabots_api"
+  s.version = "0.0.1"
 
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib"]
+  s.authors = ["Takuya Tsuchida"]
+  s.date = "2017-01-27"
+  s.description = ""
+  s.email = ["takuya.tsuchida@spontena.com"]
+  s.files = [".gitignore", "Gemfile", "LICENSE.txt", "README.md", "Rakefile", "lib/pandorabots.rb", "lib/pandorabots/version.rb", "pandorabots.gemspec"]
+  s.homepage = "https://github.com/spontena/pb-ruby"
+  s.licenses = ["MIT"]
+  s.rubygems_version = "2.5.1"
+  s.summary = "Pandorabots API module for Ruby."
 
-  spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
+  if s.respond_to? :specification_version then
+    s.specification_version = 4
+
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_development_dependency(%q<bundler>, ["~> 1.6"])
+      s.add_development_dependency(%q<rake>, [">= 0"])
+    else
+      s.add_dependency(%q<bundler>, ["~> 1.6"])
+      s.add_dependency(%q<rake>, [">= 0"])
+    end
+  else
+    s.add_dependency(%q<bundler>, ["~> 1.6"])
+    s.add_dependency(%q<rake>, [">= 0"])
+  end
 end

@@ -46,14 +46,14 @@ module Pandorabots
         succeed_compilation?(response)
       end
 
-      def talk(app_id, botname, input, client_name, user_key:)
-        request_uri = "/talk/#{app_id}/#{botname}?input=#{input}&client_name=#{client_name}&user_key=#{user_key}"
+      def talk(app_id, botname, input, user_key:, sessionid: nil)
+        request_uri = "/talk/#{app_id}/#{botname}"
         post = Net::HTTP::Post.new(URI.escape(request_uri))
+        post.set_form_data({ "input" => input, "user_key" => user_key, "sessionid" => sessionid })
         response = https.request(post)
         response_json = JSON.parse(response.body) if succeed_talk?(response)
         response_json
       end
-
 
       private
 
@@ -67,7 +67,7 @@ module Pandorabots
         vhttps.use_ssl = true
         vhttps
       end
-      
+
       def filename(file)
         File.basename(file, '.*')
       end
